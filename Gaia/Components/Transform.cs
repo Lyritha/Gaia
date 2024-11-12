@@ -7,7 +7,6 @@ namespace Gaia.Components
         public Vector2 position;
         public float rotation;
         public Vector2 scale;
-
         public Transform(Vector2 position, float rotation, Vector2 scale) 
         { 
             this.position = position;

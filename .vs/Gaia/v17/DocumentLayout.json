@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\colli\\source\\repos\\Gaia\\",
+  "WorkspaceRootPath": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\components\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\components\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\components\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\components\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\components\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\components\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,24 +42,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Transform.cs",
-              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\Transform.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Components\\Transform.cs",
               "RelativeDocumentMoniker": "Gaia\\Components\\Transform.cs",
-              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\Transform.cs",
+              "ToolTip": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Components\\Transform.cs",
               "RelativeToolTip": "Gaia\\Components\\Transform.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T11:26:44.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "InputHandler.cs",
-              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\InputHandler.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Components\\InputHandler.cs",
               "RelativeDocumentMoniker": "Gaia\\Components\\InputHandler.cs",
-              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\InputHandler.cs",
+              "ToolTip": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Components\\InputHandler.cs",
               "RelativeToolTip": "Gaia\\Components\\InputHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -68,11 +68,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GameObject.cs",
-              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Components\\GameObject.cs",
               "RelativeDocumentMoniker": "Gaia\\Components\\GameObject.cs",
-              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\GameObject.cs",
+              "ToolTip": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Components\\GameObject.cs",
               "RelativeToolTip": "Gaia\\Components\\GameObject.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -81,24 +81,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\GameManager.cs",
               "RelativeDocumentMoniker": "Gaia\\GameManager.cs",
-              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\GameManager.cs",
+              "ToolTip": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\GameManager.cs",
               "RelativeToolTip": "Gaia\\GameManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwDAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T09:02:07.616Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Program.cs",
               "RelativeDocumentMoniker": "Gaia\\Program.cs",
-              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Program.cs",
+              "ToolTip": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Program.cs",
               "RelativeToolTip": "Gaia\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
