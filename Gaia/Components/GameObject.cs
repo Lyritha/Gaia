@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Gaia.Components
 {
-    public class GameObject
+    internal class GameObject
     {
         public Transform transform;
 
@@ -16,6 +16,16 @@ namespace Gaia.Components
         {
             this.texture = texture;
             transform = new(position, 0, scale);
+        }
+
+        public void Update(float deltaTime)
+        {
+            Rotate(deltaTime);
+        }
+
+        public void Destory(Game game)
+        {
+
         }
 
         public void MoveTowards(float deltaTime)
@@ -33,8 +43,10 @@ namespace Gaia.Components
         /// Draws this object on the screen
         /// </summary>
         /// <param name="pSpriteBatch"></param>
-        public void DrawSelf(SpriteBatch pSpriteBatch)
+        public void DrawSelf(SpriteBatch pSpriteBatch, Vector2 resolutionScaling)
         {
+            Vector2 scaledScale = transform.scale * resolutionScaling;
+
             //get pivot point of object
             Vector2 pivotPoint = new(texture.Width / 2, texture.Height / 2);
 
@@ -45,8 +57,8 @@ namespace Gaia.Components
                 null, 
                 Color.White, 
                 transform.rotation, 
-                pivotPoint, 
-                transform.scale, 
+                pivotPoint,
+                scaledScale, 
                 SpriteEffects.None, 1f
                 );
         }

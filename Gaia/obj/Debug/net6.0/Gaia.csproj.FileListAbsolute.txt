@@ -44,10 +44,9 @@ C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.GeneratedMSBuild
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.AssemblyInfoInputs.cache
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.AssemblyInfo.cs
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.csproj.CoreCompileInputs.cache
-C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.sourcelink.json
-C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.csproj.Up2Date
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.dll
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\refint\Gaia.dll
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.pdb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.genruntimeconfig.cache
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\ref\Gaia.dll
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.csproj.CopyComplete
