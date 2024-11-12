@@ -1,2 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/colli/source/repos/Gaia/Gaia/Content/afbeelding.png","C:/Users/colli/source/repos/Gaia/Gaia/Content/bin/DesktopGL/Player.xnb","TextureProcessor","Texture2DContent",2954,1349845,0.1259185
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/afbeelding.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Player.xnb","TextureProcessor","Texture2DContent",2954,1349845,0.1065394
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/arrow.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/arrow.xnb","TextureProcessor","Texture2DContent",15788,8294485,0.2329773
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/WhiteSquare.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/WhiteSquare.xnb","TextureProcessor","Texture2DContent",5445,4665685,0.0955128

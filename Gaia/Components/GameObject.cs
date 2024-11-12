@@ -1,52 +1,35 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Gaia.Utility.CustomVariables;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Gaia.Components
 {
     internal class GameObject
     {
-        public Transform transform;
+        public ObjectTags Tag { get; private set; }
 
-        private Vector2 fowardDir;
-        private float velocity = 0;
+        public Transform transform;
 
         public Texture2D texture;
 
-        public GameObject(Vector2 position, Texture2D texture, Vector2 scale)
+        public virtual void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
-            this.texture = texture;
-            transform = new(position, 0, scale);
+            Tag = tag;
+            texture = GraphicsManager.Content.Load<Texture2D>(textureName);
+            transform = new(position, rotation, scale * GraphicsManager.ResolutionScaling);
+
+            GlobalEvents.OnUpdate += Update;
+            GlobalEvents.OnDraw += DrawSelf;
         }
 
-        public void Update(float deltaTime)
-        {
-            Rotate(deltaTime);
-        }
-
-        public void Destory(Game game)
-        {
-
-        }
-
-        public void MoveTowards(float deltaTime)
-        {
-            transform.position += (fowardDir * velocity * deltaTime);
-        }
-
-        public void Rotate(float deltaTime)
-        {
-            transform.rotation += 1 * deltaTime;
-        }
-
+        protected virtual void Update(float deltaTime) { }
 
         /// <summary>
         /// Draws this object on the screen
         /// </summary>
         /// <param name="pSpriteBatch"></param>
-        public void DrawSelf(SpriteBatch pSpriteBatch, Vector2 resolutionScaling)
+        private void DrawSelf(SpriteBatch pSpriteBatch)
         {
-            Vector2 scaledScale = transform.scale * resolutionScaling;
-
             //get pivot point of object
             Vector2 pivotPoint = new(texture.Width / 2, texture.Height / 2);
 
@@ -58,7 +41,7 @@ namespace Gaia.Components
                 Color.White, 
                 transform.rotation, 
                 pivotPoint,
-                scaledScale, 
+                transform.scale, 
                 SpriteEffects.None, 1f
                 );
         }

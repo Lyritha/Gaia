@@ -50,3 +50,5 @@ C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.pdb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.genruntimeconfig.cache
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\ref\Gaia.dll
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.csproj.CopyComplete
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\WhiteSquare.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\arrow.xnb

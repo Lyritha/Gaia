@@ -4,9 +4,13 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/colli/source/repos/Gaia/Gaia/Content/afbeelding.png</File>
+    <File>C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/afbeelding.png</File>
+    <File>C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/arrow.png</File>
+    <File>C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/WhiteSquare.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Player.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>
