@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\colli\\source\\repos\\Gaia\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\components\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\components\\transforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\transforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\source\\repos\\gaia\\gaia\\components\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\components\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:127419861:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Transforms.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\Transforms.cs",
+              "RelativeDocumentMoniker": "Gaia\\Components\\Transforms.cs",
+              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\Transforms.cs",
+              "RelativeToolTip": "Gaia\\Components\\Transforms.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T11:26:44.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InputHandler.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\InputHandler.cs",
+              "RelativeDocumentMoniker": "Gaia\\Components\\InputHandler.cs",
+              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\InputHandler.cs",
+              "RelativeToolTip": "Gaia\\Components\\InputHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:05:24.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\GameObject.cs",
+              "RelativeDocumentMoniker": "Gaia\\Components\\GameObject.cs",
+              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Components\\GameObject.cs",
+              "RelativeToolTip": "Gaia\\Components\\GameObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:04:19.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\GameManager.cs",
+              "RelativeDocumentMoniker": "Gaia\\GameManager.cs",
+              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\GameManager.cs",
+              "RelativeToolTip": "Gaia\\GameManager.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwC8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:02:07.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Program.cs",
+              "RelativeDocumentMoniker": "Gaia\\Program.cs",
+              "ToolTip": "C:\\Users\\colli\\source\\repos\\Gaia\\Gaia\\Program.cs",
+              "RelativeToolTip": "Gaia\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:01:49.884Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
