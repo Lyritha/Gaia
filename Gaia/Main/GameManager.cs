@@ -1,4 +1,5 @@
-﻿using Gaia.Utility;
+﻿using Gaia.Main.Scenes;
+using Gaia.Utility;
 using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,46 +10,44 @@ namespace Gaia
     {
         //keeps track of how much time elapsed between the previous and current frame
         private float deltaTime = 0;
-
-        //used to render the game
-        private SpriteBatch spriteBatch;
-
-        //keeps track of all current objects in the "scene"
-        private Player player;
+        private GraphicsDeviceManager graphics;
+        private Scene currentScene;
 
         public GameManager()
         {
+            graphics = new(this);
+
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-
-            GraphicsDeviceManager graphics = new GraphicsDeviceManager(this);
-            GraphicsManager.Initialize(Content, GraphicsDevice, graphics, spriteBatch);
         }
 
         protected override void Initialize()
         {
-            CreatePlayer();
+            GraphicsManager.Initialize(this, graphics);
+
+            currentScene?.Dispose();
+            currentScene = new Scene();
+            currentScene.LoadScene();
 
             base.Initialize();
         }
 
-        private void CreatePlayer()
+        private void ReloadScene()
         {
-            //get start position and scale, account for different screen resolutions
-            Vector2 startPos = Utils.UVToScreenPosition(new(0.5f, 0.5f));
-            Vector2 startScale = new Vector2(0.1f, 0.1f);
-
-            //create the player
-            player = new();
-
-            //set the default values, pass the inputHandler to the player
-            player.Initialize(ObjectTags.Player, startPos, 0, startScale, "arrow");
+            currentScene?.Dispose();
+            currentScene = new Scene();
+            currentScene.LoadScene();
         }
 
-        protected override void LoadContent() => spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        /// <summary>
+        /// updates all scripts listening to the event and gives deltaTime to all scripts
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Update(GameTime gameTime)
         {
+            if (InputHandler.IsMouseRightDown) ReloadScene();
+
             //update the deltaTime for this frame
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -59,17 +58,16 @@ namespace Gaia
             base.Update(gameTime);
         }
 
+
+        /// <summary>
+        /// minimal amount of drawing functionality to keep this part clean
+        /// </summary>
+        /// <param name="gameTime"></param>
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
-
-            // Raise the OnDraw event to allow global subscribers to draw themselves
-            GlobalEvents.RaiseOnDraw(spriteBatch);
-
-            spriteBatch.End();
-
+            GraphicsManager.CreateSpriteBatch();
             base.Draw(gameTime);
         }
     }

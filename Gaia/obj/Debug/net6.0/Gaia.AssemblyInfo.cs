@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gaia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90f8f9cfafbc61eedee053706fd98f5fe032712a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gaia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gaia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

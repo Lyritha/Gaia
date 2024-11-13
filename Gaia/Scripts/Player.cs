@@ -7,35 +7,25 @@ using System.Collections.Generic;
 
 namespace Gaia
 {
-    internal class Player : GameObject
+    internal class Player : PhysicsGameObject
     {
-        private Physics2D physics;
-        private float speed = 1;
-
         private float timeElapsed = 0;
         private List<Projectile> projectiles = new();
-
-        public override void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
-        {
-            base.Initialize(tag, position, rotation, scale, textureName);
-            physics = new(transform);
-        }
 
         protected override void Update(float deltaTime)
         {
             InputHandler.Update(deltaTime);
 
-            Move();
             Rotate();
             Shoot(deltaTime);
 
             base.Update(deltaTime);
         }
 
-        // Method to move the object based on velocity and deltaTime
-        private void Move()
+        protected override void Move()
         {
             physics.AddForce(transform.Forward() * InputHandler.Wasd.Y * speed);
+            base.Move();
         }
 
         private void Rotate()
@@ -53,12 +43,23 @@ namespace Gaia
 
                 Projectile projectile = new();
                 projectile.Initialize(ObjectTags.PlayerProjectile, spawnPoint, transform.rotation, new(0.05f,0.05f), "WhiteSquare");
+                projectile.speed = 50;
                 projectiles.Add(projectile);
 
-                physics.AddForce(-transform.Forward() * 5);
+                physics.AddForce(-transform.Forward() * projectile.speed / 4);
 
                 timeElapsed = 0;
             }
+        }
+
+        // Override Dispose to clean up projectiles
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            // Dispose all projectiles and clear the list
+            foreach (Projectile projectile in projectiles) projectile.Dispose();
+            projectiles.Clear();
         }
     }
 }

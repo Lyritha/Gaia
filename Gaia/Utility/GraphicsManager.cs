@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace Gaia
 {
@@ -17,12 +18,12 @@ namespace Gaia
         public static SpriteBatch SpriteBatch { get; private set; }
 
         // Initialization method to set up the global variables
-        public static void Initialize(ContentManager content, GraphicsDevice graphicsDevice, GraphicsDeviceManager graphicsDeviceManager, SpriteBatch spriteBatch)
+        public static void Initialize(Game game, GraphicsDeviceManager graphicsDeviceManager)
         {
-            Content = content;
-            GraphicsDevice = graphicsDevice;
+            Content = game.Content;
+            GraphicsDevice = game.GraphicsDevice;
             GraphicsDeviceManager = graphicsDeviceManager;
-            SpriteBatch = spriteBatch;
+            SpriteBatch = new(GraphicsDevice);
 
             InitializeGraphics();
         }
@@ -43,6 +44,17 @@ namespace Gaia
             GraphicsDeviceManager.IsFullScreen = true;
 
             GraphicsDeviceManager.ApplyChanges();
+        }
+
+        public static void CreateSpriteBatch()
+        {
+
+            SpriteBatch.Begin();
+
+            // Raise the OnDraw event to allow global subscribers to draw themselves
+            GlobalEvents.RaiseOnDraw(SpriteBatch);
+
+            SpriteBatch.End();
         }
     }
 }

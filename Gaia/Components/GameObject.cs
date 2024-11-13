@@ -45,5 +45,16 @@ namespace Gaia.Components
                 SpriteEffects.None, 1f
                 );
         }
+
+        // Dispose method for cleanup
+        public virtual void Dispose()
+        {
+            // Unsubscribe from global events
+            GlobalEvents.OnUpdate -= Update;
+            GlobalEvents.OnDraw -= DrawSelf;
+
+            // Do NOT dispose of the texture here; let ContentManager handle it
+            texture = null;  // Set to null so the reference is cleared
+        }
     }
 }
