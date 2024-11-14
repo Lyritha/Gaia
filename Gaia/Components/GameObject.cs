@@ -1,4 +1,5 @@
-﻿using Gaia.Utility.CustomVariables;
+﻿using Gaia.Utility;
+using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -11,6 +12,9 @@ namespace Gaia.Components
         public Transform transform;
 
         public Texture2D texture;
+        public Color spriteColor = Color.White;
+
+        public bool isColliding { get; private set; } = false;
 
         public virtual void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
@@ -18,11 +22,15 @@ namespace Gaia.Components
             texture = GraphicsManager.Content.Load<Texture2D>(textureName);
             transform = new(position, rotation, scale * GraphicsManager.ResolutionScaling);
 
+            CollisionHandler.collisionObjects.Add(this);
+
             GlobalEvents.OnUpdate += Update;
             GlobalEvents.OnDraw += DrawSelf;
         }
 
-        protected virtual void Update(float deltaTime) { }
+        protected virtual void Update(float deltaTime) 
+        {
+        }
 
         /// <summary>
         /// Draws this object on the screen
@@ -38,7 +46,7 @@ namespace Gaia.Components
                 texture, 
                 transform.position, 
                 null, 
-                Color.White, 
+                spriteColor, 
                 transform.rotation, 
                 pivotPoint,
                 transform.scale, 
@@ -55,6 +63,24 @@ namespace Gaia.Components
 
             // Do NOT dispose of the texture here; let ContentManager handle it
             texture = null;  // Set to null so the reference is cleared
+        }
+
+        public void OnCollisionStarted()
+        {
+            spriteColor = Color.Red;
+            isColliding = true;
+        }
+
+        public void OnColliding()
+        {
+            spriteColor = Color.Purple;
+            isColliding = true;
+        }
+
+        public void OnCollisionStopped()
+        {
+            spriteColor = Color.White;
+            isColliding = false;
         }
     }
 }

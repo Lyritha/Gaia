@@ -1,6 +1,5 @@
 ﻿using Gaia.Main.Scenes;
 using Gaia.Utility;
-using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -24,10 +23,9 @@ namespace Gaia
         protected override void Initialize()
         {
             GraphicsManager.Initialize(this, graphics);
+            GlobalEvents.OnUpdate += CollisionHandler.Update;
 
-            currentScene?.Dispose();
-            currentScene = new Scene();
-            currentScene.LoadScene();
+            ReloadScene();
 
             base.Initialize();
         }
