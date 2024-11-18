@@ -3,6 +3,7 @@
     internal enum ForceType
     {
         Acceleration,
-        VelocityChange
+        VelocityChange,
+        Impulse
     }
 }

@@ -2,10 +2,11 @@
 using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace Gaia.Components
 {
-    internal class GameObject
+    internal class GameObject : IDisposable
     {
         public ObjectTags Tag { get; private set; }
 
@@ -15,15 +16,21 @@ namespace Gaia.Components
         public Color spriteColor = Color.White;
 
         public bool isColliding = false;
+        public float colliderRadius { get; private set; } = 0;
 
         public virtual void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
+            //set default values
             Tag = tag;
             texture = GraphicsManager.Content.Load<Texture2D>(textureName);
             transform = new(position, rotation, scale * GraphicsManager.ResolutionScaling);
 
-            CollisionHandler.collisionObjects.Add(this);
+            //calculate the collider radius
+            float medianDimension = (texture.Width + texture.Height) / 2f;
+            float uniformScale = (transform.scale.X + transform.scale.Y) / 2f;
+            colliderRadius = (medianDimension * uniformScale) / 2f;
 
+            //start update cycle
             GlobalEvents.OnUpdate += Update;
             GlobalEvents.OnDraw += DrawSelf;
         }
@@ -65,17 +72,17 @@ namespace Gaia.Components
             texture = null;  // Set to null so the reference is cleared
         }
 
-        public virtual void OnCollisionStarted(ObjectTags collidingTag)
+        public virtual void OnCollisionStarted(CollisionData collisionData)
         {
             isColliding = true;
         }
 
-        public virtual void OnColliding(ObjectTags collidingTag)
+        public virtual void OnColliding(CollisionData collisionData)
         {
             isColliding = true;
         }
 
-        public virtual void OnCollisionStopped(ObjectTags collidingTag)
+        public virtual void OnCollisionStopped()
         {
             isColliding = false;
         }

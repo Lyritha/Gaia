@@ -2,6 +2,8 @@
 using Gaia.Utility;
 using Gaia.Scripts;
 using Microsoft.Xna.Framework;
+using Gaia.Scripts.Objects;
+using System;
 
 namespace Gaia.Main.Scenes
 {
@@ -28,7 +30,13 @@ namespace Gaia.Main.Scenes
 
             //set the default values, pass the inputHandler to the player
             player.Initialize(ObjectTags.Player, startPos, 0, startScale, "arrow");
-            player.speed = 2;
+        }
+
+        public override void Dispose()
+        {
+            player?.Dispose();
+            spawnAstroids?.Dispose();
+            base.Dispose();
         }
     }
 }

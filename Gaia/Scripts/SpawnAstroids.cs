@@ -1,4 +1,5 @@
 ﻿using Gaia.Components;
+using Gaia.Scripts.Objects;
 using Gaia.Utility;
 using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Gaia.Scripts
 {
-    internal class SpawnAstroids
+    internal class SpawnAstroids : IDisposable
     {
         private int screenHeight = 0;
         private int screenWidth = 0;
@@ -62,7 +63,8 @@ namespace Gaia.Scripts
             //spawn the actual astroid
             Astroid astroid = new();
             astroid.Initialize(ObjectTags.Enemy, spawnPoint, rotation, new(0.05f, 0.05f), "WhiteSquare");
-            astroid.speed = 50;
+            astroid.physics.AddForce(astroid.transform.Forward() * 50, ForceType.Impulse);
+
 
             //add the astroid to the list
             astroids.Add(astroid);

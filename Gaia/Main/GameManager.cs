@@ -10,7 +10,6 @@ namespace Gaia
         //keeps track of how much time elapsed between the previous and current frame
         private float deltaTime = 0;
         private GraphicsDeviceManager graphics;
-        private Scene_Template currentScene;
 
         public GameManager()
         {
@@ -25,7 +24,7 @@ namespace Gaia
             GraphicsManager.Initialize(this, graphics);
             GlobalEvents.OnUpdate += CollisionHandler.Update;
 
-            SceneManager.LoadScene();
+            SceneManager.LoadScene(0);
 
             base.Initialize();
         }

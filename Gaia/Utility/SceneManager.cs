@@ -11,7 +11,7 @@ namespace Gaia.Utility
 
         static SceneManager()
         {
-            sceneTypes.Add(typeof(Scene_Template));
+            sceneTypes.Add(typeof(Scene_Level_1));
         }
 
         public static void LoadScene(int sceneIndex = 0)
