@@ -14,7 +14,7 @@ namespace Gaia.Components
         public Texture2D texture;
         public Color spriteColor = Color.White;
 
-        public bool isColliding { get; private set; } = false;
+        public bool isColliding = false;
 
         public virtual void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
@@ -65,21 +65,18 @@ namespace Gaia.Components
             texture = null;  // Set to null so the reference is cleared
         }
 
-        public void OnCollisionStarted()
+        public virtual void OnCollisionStarted(ObjectTags collidingTag)
         {
-            spriteColor = Color.Red;
             isColliding = true;
         }
 
-        public void OnColliding()
+        public virtual void OnColliding(ObjectTags collidingTag)
         {
-            spriteColor = Color.Purple;
             isColliding = true;
         }
 
-        public void OnCollisionStopped()
+        public virtual void OnCollisionStopped(ObjectTags collidingTag)
         {
-            spriteColor = Color.White;
             isColliding = false;
         }
     }

@@ -25,18 +25,10 @@ namespace Gaia
             GraphicsManager.Initialize(this, graphics);
             GlobalEvents.OnUpdate += CollisionHandler.Update;
 
-            ReloadScene();
+            SceneManager.LoadScene();
 
             base.Initialize();
         }
-
-        private void ReloadScene()
-        {
-            currentScene?.Dispose();
-            currentScene = new Scene();
-            currentScene.LoadScene();
-        }
-
 
         /// <summary>
         /// updates all scripts listening to the event and gives deltaTime to all scripts
@@ -44,7 +36,7 @@ namespace Gaia
         /// <param name="gameTime"></param>
         protected override void Update(GameTime gameTime)
         {
-            if (InputHandler.IsMouseRightDown) ReloadScene();
+            if (InputHandler.IsMouseRightDown) SceneManager.ReloadScene();
 
             //update the deltaTime for this frame
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;

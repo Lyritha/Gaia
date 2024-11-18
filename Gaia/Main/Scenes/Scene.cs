@@ -10,6 +10,7 @@ namespace Gaia.Main.Scenes
         //keeps track of player object in current "scene"
         private Player player;
         private SpawnAstroids spawnAstroids;
+        public int sceneIndex { get; private set; } = 0;
 
         public void LoadScene()
         {

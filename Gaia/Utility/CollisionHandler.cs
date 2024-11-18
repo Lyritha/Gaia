@@ -2,55 +2,78 @@
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Gaia.Utility
 {
     internal static class CollisionHandler
     {
         public static List<GameObject> collisionObjects = new();
+        private static HashSet<(GameObject, GameObject)> collidingPairs = new();
 
         public static void Update(float delaTime)
         {
-            CheckAllCollision();
+            CheckAllCollisions();
         }
 
-        private static void CheckAllCollision()
+        private static void CheckAllCollisions()
         {
-            //go through all the objects currently assigned to the collision check
+            // create a new hashset
+            HashSet<(GameObject,GameObject)> newCollidingPairs = new();
+
+            // go through all the collissionObjects
             for (int currentIndex = 0; currentIndex < collisionObjects.Count; currentIndex++)
             {
-                //grab the current object
+                // grab the first object (current object)
                 GameObject currentObject = collisionObjects[currentIndex];
 
-                //go through all the target objects, use calculated default value to avoid double checks
+                // go through all the collission objects again, making sure to avoid checking the first object
                 for (int targetIndex = currentIndex + 1; targetIndex < collisionObjects.Count; targetIndex++)
                 {
-                    //grab target object
+                    // grab the second object (target object)
                     GameObject targetObject = collisionObjects[targetIndex];
 
-                    // Skip objects with the same tag
-                    if (currentObject.Tag == targetObject.Tag) continue;
-
-                    // Check if the distance is below the threshold
+                    // Check if the objects are colliding
                     bool isColliding = Vector2.Distance(currentObject.transform.position, targetObject.transform.position) < 300f;
 
-                    //if both objects are colliding with eachother
+                    // grab the 2 objects and put them in one var (matching the hashSet)
+                    var pair = (currentObject, targetObject);
+
                     if (isColliding)
                     {
-                        //only call collision started if it's not yet colliding with something
-                        if (!currentObject.isColliding) currentObject.OnCollisionStarted();
-                        else currentObject.OnColliding();
+                        //if the objects aren't already colliding together
+                        if (!collidingPairs.Contains(pair))
+                        {
+                            // Collision Start
+                            currentObject.OnCollisionStarted(targetObject.Tag);
+                            targetObject.OnCollisionStarted(currentObject.Tag);
+                        }
+                        else
+                        {
+                            // Collision Stay
+                            currentObject.OnColliding(targetObject.Tag);
+                            targetObject.OnColliding(currentObject.Tag);
+                        }
 
-                        if (!targetObject.isColliding) targetObject.OnCollisionStarted();
-                        else targetObject.OnColliding();
+                        // Add to the new colliding pairs set
+                        newCollidingPairs.Add(pair);
                     }
-                    else
+                    else if (collidingPairs.Contains(pair))
                     {
-                        if (currentObject.isColliding) currentObject.OnCollisionStopped();
-                        if (targetObject.isColliding) targetObject.OnCollisionStopped();
+                        // Collision Stop
+                        currentObject.OnCollisionStopped(targetObject.Tag);
+                        targetObject.OnCollisionStopped(currentObject.Tag);
                     }
-
                 }
+            }
+
+            // Update colliding pairs
+            collidingPairs = newCollidingPairs;
+
+            // Ensure objects not in collidingPairs are reset (if needed)
+            foreach (var obj in collisionObjects)
+            {
+                obj.isColliding = newCollidingPairs.Any(pair => pair.Item1 == obj || pair.Item2 == obj);
             }
         }
 
