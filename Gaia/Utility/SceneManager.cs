@@ -7,11 +7,11 @@ namespace Gaia.Utility
     public static class SceneManager
     {
         private static List<Type> sceneTypes = new();
-        private static Scene currentScene;
+        private static Scene_Template currentScene;
 
         static SceneManager()
         {
-            sceneTypes.Add(typeof(Scene));
+            sceneTypes.Add(typeof(Scene_Template));
         }
 
         public static void LoadScene(int sceneIndex = 0)
@@ -28,12 +28,12 @@ namespace Gaia.Utility
             currentScene.LoadScene();
         }
 
-        private static Scene CreateScene(Type sceneType)
+        private static Scene_Template CreateScene(Type sceneType)
         {
-            if (!typeof(Scene).IsAssignableFrom(sceneType))
+            if (!typeof(Scene_Template).IsAssignableFrom(sceneType))
                 throw new InvalidOperationException($"Type {sceneType.Name} is not a Scene.");
 
-            return (Scene)Activator.CreateInstance(sceneType);
+            return (Scene_Template)Activator.CreateInstance(sceneType);
         }
     }
 }

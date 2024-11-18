@@ -10,7 +10,7 @@ namespace Gaia
         //keeps track of how much time elapsed between the previous and current frame
         private float deltaTime = 0;
         private GraphicsDeviceManager graphics;
-        private Scene currentScene;
+        private Scene_Template currentScene;
 
         public GameManager()
         {

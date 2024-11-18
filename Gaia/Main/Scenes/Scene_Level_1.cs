@@ -1,18 +1,17 @@
 ﻿using Gaia.Utility.CustomVariables;
 using Gaia.Utility;
-using Microsoft.Xna.Framework;
 using Gaia.Scripts;
+using Microsoft.Xna.Framework;
 
 namespace Gaia.Main.Scenes
 {
-    internal class Scene
+    internal class Scene_Level_1 : Scene_Template
     {
         //keeps track of player object in current "scene"
         private Player player;
         private SpawnAstroids spawnAstroids;
-        public int sceneIndex { get; private set; } = 0;
 
-        public void LoadScene()
+        public override void LoadScene()
         {
             CreatePlayer();
             spawnAstroids = new();
@@ -30,13 +29,6 @@ namespace Gaia.Main.Scenes
             //set the default values, pass the inputHandler to the player
             player.Initialize(ObjectTags.Player, startPos, 0, startScale, "arrow");
             player.speed = 2;
-        }
-
-        // Dispose method to clean up resources and unsubscribe events
-        public void Dispose()
-        {
-            player?.Dispose();
-            spawnAstroids?.Dispose();
         }
     }
 }
