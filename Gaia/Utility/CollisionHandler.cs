@@ -12,9 +12,18 @@ namespace Gaia.Utility
         public static List<PhysicsGameObject> collisionObjects = new();
         private static HashSet<(PhysicsGameObject, PhysicsGameObject)> collidingPairs = new();
 
+        private static float timer = 0f;
+        private static float interval = 0.05f; 
+
         public static void Update(float deltaTime)
         {
-            CheckAllCollisions();
+            timer += deltaTime;
+
+            if (timer >= interval)
+            {
+                timer = 0f;
+                CheckAllCollisions();
+            }
         }
 
         private static void CheckAllCollisions()
@@ -33,14 +42,18 @@ namespace Gaia.Utility
             Vector2 currentObjPos = currentObject.transform.position;
             Vector2 targetObjPos = targetObject.transform.position;
 
-            // Check if the objects are colliding (based on distance and radii)
-            bool isColliding = Vector2.Distance(currentObjPos, targetObjPos) < currentObject.colliderRadius + targetObject.colliderRadius;
+            // Compare squared distances instead of using Vector2.Distance to avoid sqrt operation
+            float squaredDistance = (currentObjPos - targetObjPos).LengthSquared();
+            float squaredRadiusSum = (currentObject.colliderRadius + targetObject.colliderRadius) * (currentObject.colliderRadius + targetObject.colliderRadius);
 
+            bool isColliding = squaredDistance < squaredRadiusSum;
+
+            // Handle collision case
             if (isColliding)
             {
-                // Calculate direction vectors
-                Vector2 directionToCurrent = currentObject.transform.position - targetObject.transform.position;
-                Vector2 directionToTarget = targetObject.transform.position - currentObject.transform.position;
+                // Calculate and normalize direction vectors only once
+                Vector2 directionToCurrent = currentObjPos - targetObjPos;
+                Vector2 directionToTarget = targetObjPos - currentObjPos;
 
                 directionToCurrent.Normalize();
                 directionToTarget.Normalize();
@@ -49,63 +62,87 @@ namespace Gaia.Utility
                 CollisionData currentObjectData = new(targetObject, directionToCurrent);
                 CollisionData targetObjectData = new(currentObject, directionToTarget);
 
-                // If the object pair doesn't already exist, add the pair
+                // Handle new collision pairs (only if not already in pairs)
                 if (!collidingPairs.Contains(pair))
                 {
-                    //only call OnCollisionStarted if this object is not yet in a pair
-                    if (!CheckIfInPairs(currentObject)) currentObject.OnCollisionStarted(currentObjectData);
-                    if (!CheckIfInPairs(targetObject)) targetObject.OnCollisionStarted(targetObjectData);
+                    // Only trigger OnCollisionStarted if not already in pairs
+                    if (!CheckIfInPairs(currentObject))
+                        currentObject.OnCollisionStarted(currentObjectData);
+
+                    if (!CheckIfInPairs(targetObject))
+                        targetObject.OnCollisionStarted(targetObjectData);
 
                     // Apply the collision forces
                     ApplyCollisionForces(currentObject, targetObject);
 
-                    //add this pair to the list
+                    // Add the pair to the list
                     collidingPairs.Add(pair);
                 }
                 else
                 {
+                    // Objects are colliding, call OnColliding
                     currentObject.OnColliding(currentObjectData);
                     targetObject.OnColliding(targetObjectData);
                 }
             }
             else
             {
-                collidingPairs.Remove(pair);
+                // Remove pair from colliding pairs list
+                if (collidingPairs.Contains(pair))
+                {
+                    collidingPairs.Remove(pair);
 
-                // Call OnCollisionStopped only if the objects were previously colliding
-                if (!CheckIfInPairs(currentObject)) currentObject.OnCollisionStopped();
-                if (!CheckIfInPairs(targetObject)) targetObject.OnCollisionStopped();
+                    // Call OnCollisionStopped only if not already in pairs
+                    if (!CheckIfInPairs(currentObject))
+                        currentObject.OnCollisionStopped();
+
+                    if (!CheckIfInPairs(targetObject))
+                        targetObject.OnCollisionStopped();
+                }
             }
         }
 
 
         private static void ApplyCollisionForces(PhysicsGameObject currentObject, PhysicsGameObject targetObject)
         {
-            //if either objects aren't affected by collision forces skip the check
+            // If either object isn't affected by collision forces, skip the check
             if (!currentObject.affectedByCollision || !targetObject.affectedByCollision) return;
 
-            // Get the velocity of the colliding object (target)
-            Vector2 otherObjectVelocity = targetObject.physics.Velocity;
+            // Get velocities and masses to avoid redundant property access
+            Vector2 currentVelocity = currentObject.physics.Velocity;
+            Vector2 targetVelocity = targetObject.physics.Velocity;
+            float currentMass = currentObject.physics.Mass;
+            float targetMass = targetObject.physics.Mass;
 
-            // Calculate the relative velocity: This is the difference between the two objects' velocities
-            Vector2 relativeVelocity = otherObjectVelocity - currentObject.physics.Velocity;
+            // Calculate the relative velocity between the two objects
+            Vector2 relativeVelocity = targetVelocity - currentVelocity;
 
-            // Calculate the direction of the collision (normalized)
+            // Calculate the direction of the collision and normalize it manually (avoiding extra calls to Normalize)
             Vector2 collisionDir = targetObject.transform.position - currentObject.transform.position;
-            collisionDir.Normalize();
+            float dirMagnitudeSquared = collisionDir.X * collisionDir.X + collisionDir.Y * collisionDir.Y;
 
-            // Compute a force based on relative velocity and masses
-            // Basic idea: Force = mass * relative velocity. This is simplified to impulse transfer.
-            float massRatio = targetObject.physics.Mass / (currentObject.physics.Mass + targetObject.physics.Mass);
+            // If the magnitude is small, we can avoid division by zero issues
+            if (dirMagnitudeSquared > 1e-6f)
+            {
+                // Avoiding sqrt operation for normalization, just scale the direction components
+                float invMagnitude = 1.0f / MathF.Sqrt(dirMagnitudeSquared);
+                collisionDir.X *= invMagnitude;
+                collisionDir.Y *= invMagnitude;
+            } else return;
 
-            // Scale the force applied based on the relative velocity and mass ratio
-            Vector2 force = collisionDir * relativeVelocity.Length() * massRatio * 1;  // Scaling factor (you can adjust this)
+            // Calculate mass ratio once
+            float massRatio = targetMass / (currentMass + targetMass);
 
-            // Apply the force as an impulse to the current object
-            currentObject.physics.AddForce(-force, ForceType.Impulse);
+            // Calculate the impulse magnitude based on the relative velocity (without sqrt)
+            float impulseMagnitude = relativeVelocity.X * collisionDir.X + relativeVelocity.Y * collisionDir.Y;
+            impulseMagnitude *= massRatio;
 
-            // Apply the opposite force to the target object (so both objects are affected)
-            targetObject.physics.AddForce(force, ForceType.Impulse);
+            // Calculate the force vector (avoiding sqrt and unnecessary vector operations)
+            Vector2 force = new(collisionDir.X * impulseMagnitude, collisionDir.Y * impulseMagnitude);
+
+            // Apply the forces as impulses
+            currentObject.physics.AddForce(force, ForceType.Acceleration);  // Opposite force to the current object
+            targetObject.physics.AddForce(-force, ForceType.Acceleration);    // Force applied to the target object
         }
 
         private static bool CheckIfInPairs(PhysicsGameObject obj)

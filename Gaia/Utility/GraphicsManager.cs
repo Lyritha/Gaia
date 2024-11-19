@@ -49,7 +49,13 @@ namespace Gaia
         public static void CreateSpriteBatch()
         {
 
-            SpriteBatch.Begin();
+            SpriteBatch.Begin(
+                SpriteSortMode.BackToFront,
+                BlendState.AlphaBlend,
+                SamplerState.LinearClamp,
+                DepthStencilState.None,
+                RasterizerState.CullNone
+                );
 
             // Raise the OnDraw event to allow global subscribers to draw themselves
             GlobalEvents.RaiseOnDraw(SpriteBatch);

@@ -4,17 +4,22 @@ using Gaia.Scripts;
 using Microsoft.Xna.Framework;
 using Gaia.Scripts.Objects;
 using System;
+using Gaia.Main.UI;
 
 namespace Gaia.Main.Scenes
 {
     internal class Scene_Level_1 : Scene_Template
     {
+        //ui
+        UI_Template ui;
+
         //keeps track of player object in current "scene"
         private Player player;
         private SpawnAstroids spawnAstroids;
 
         public override void LoadScene()
         {
+            ui = new UI_Template();
             CreatePlayer();
             spawnAstroids = new();
         }

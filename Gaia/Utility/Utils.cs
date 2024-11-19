@@ -13,5 +13,16 @@ namespace Gaia.Utility
 
             return ConvertedPosition;
         }
+
+        public static bool IsOutOfBounds(Vector2 pos)
+        {
+            int width = GraphicsManager.GraphicsDeviceManager.PreferredBackBufferWidth;
+            int height = GraphicsManager.GraphicsDeviceManager.PreferredBackBufferHeight;
+
+            int marginWidth = width / 10;
+            int marginHeight = height / 10;
+
+            return pos.X < 0 - marginWidth || pos.X > width + marginWidth || pos.Y < 0 - marginHeight || pos.Y > height + marginHeight;
+        }
     }
 }

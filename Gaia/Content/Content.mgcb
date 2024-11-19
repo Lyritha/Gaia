@@ -25,6 +25,13 @@
 /processorParam:TextureFormat=Color
 /build:afbeelding.png;Player.png
 
+#begin Arial_32.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Arial_32.spritefont
+
 #begin arrow.png
 /importer:TextureImporter
 /processor:TextureProcessor

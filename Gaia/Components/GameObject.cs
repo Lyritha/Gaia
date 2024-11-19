@@ -57,7 +57,8 @@ namespace Gaia.Components
                 transform.rotation, 
                 pivotPoint,
                 transform.scale, 
-                SpriteEffects.None, 1f
+                SpriteEffects.None, 
+                1
                 );
         }
 

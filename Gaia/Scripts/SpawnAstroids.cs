@@ -13,7 +13,7 @@ namespace Gaia.Scripts
         private int screenHeight = 0;
         private int screenWidth = 0;
 
-        private float spawnDelay = 0.5f;
+        private float spawnDelay = 0.01f;
         private float timeElapsed = 0;
 
         Random random;
@@ -37,6 +37,18 @@ namespace Gaia.Scripts
             {
                 SpawnNewAstroid();
                 timeElapsed = 0;
+            }
+
+            for (int i = astroids.Count - 1; i >= 0; i--)
+            {
+                Astroid astroid = astroids[i];
+
+                if (Utils.IsOutOfBounds(astroid.transform.position))
+                {
+
+                    astroid.Dispose();
+                    astroids.RemoveAt(i);
+                }
             }
         }
 

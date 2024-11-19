@@ -11,7 +11,7 @@ namespace Gaia.Components
 
 
         //parameters
-        public float maxVelocity = 10000; // Max velocity limit
+        public float maxVelocity = 100; // Max velocity limit
         public Vector2 Velocity { get; private set; } = Vector2.Zero;
         public float Mass = 1; // Default mass
         public float DragCoefficient { get; private set; } = 0.001f; // Default drag coefficient (this can be tuned)
