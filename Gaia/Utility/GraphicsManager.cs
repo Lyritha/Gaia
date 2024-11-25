@@ -41,7 +41,7 @@ namespace Gaia
             GraphicsDeviceManager.PreferredBackBufferWidth = screenWidth;
             GraphicsDeviceManager.PreferredBackBufferHeight = screenHeight;
 
-            GraphicsDeviceManager.IsFullScreen = true;
+            GraphicsDeviceManager.IsFullScreen = false;
 
             GraphicsDeviceManager.ApplyChanges();
         }

@@ -1,8 +1,8 @@
-﻿using Gaia.Utility;
-using Gaia.Utility.CustomVariables;
+﻿using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
 
 namespace Gaia.Components
 {

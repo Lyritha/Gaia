@@ -12,13 +12,21 @@ namespace Gaia.Main.UI
         public  UI_Template()
         {
             Score = new UI_Element();
-            Score.Initialize("100", 1, new(0, 0), PivotPoint.TopLeft);
+            Score.Initialize("Score: 0", 1, new(0, 0), PivotPoint.TopLeft);
 
             Health = new UI_Element();
-            Health.Initialize("3", 1, new(1,0), PivotPoint.TopRight);
+            Health.Initialize("Health: 3", 1, new(1,0), PivotPoint.TopRight);
 
-            Dot = new UI_Element();
-            Dot.Initialize(".", 1, new(0.5f, 0.5f), PivotPoint.Center);
+        }
+
+        public void UpdateScore(int amount)
+        {
+            Score.Content = $"Score: {amount}";
+        }
+
+        public void UpdateHealth(int amount)
+        {
+            Health.Content = $"Health: {amount}";
         }
 
         // Dispose method for cleanup

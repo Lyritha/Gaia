@@ -10,6 +10,8 @@ namespace Gaia.Main.Scenes
 {
     internal class Scene_Level_1 : Scene_Template
     {
+        public int score = 0;
+
         //ui
         UI_Template ui;
 
@@ -22,6 +24,8 @@ namespace Gaia.Main.Scenes
             ui = new UI_Template();
             CreatePlayer();
             spawnAstroids = new();
+
+            player.OnPlayerTakeDamage += ui.UpdateHealth;
         }
 
         private void CreatePlayer()
@@ -39,8 +43,11 @@ namespace Gaia.Main.Scenes
 
         public override void Dispose()
         {
+            player.OnPlayerTakeDamage -= ui.UpdateHealth;
+
             player?.Dispose();
             spawnAstroids?.Dispose();
+
             base.Dispose();
         }
     }

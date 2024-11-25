@@ -13,11 +13,12 @@ namespace Gaia.Scripts
         private int screenHeight = 0;
         private int screenWidth = 0;
 
-        private float spawnDelay = 0.01f;
+        private float spawnDelay = 0.5f;
         private float timeElapsed = 0;
 
         Random random;
-        private List<Astroid> astroids = new();
+
+        public List<Astroid> astroids { get; private set; } = new();
 
         public SpawnAstroids()
         {
@@ -45,9 +46,8 @@ namespace Gaia.Scripts
 
                 if (Utils.IsOutOfBounds(astroid.transform.position))
                 {
-
                     astroid.Dispose();
-                    astroids.RemoveAt(i);
+                    astroids.Remove(astroid);
                 }
             }
         }
@@ -68,28 +68,33 @@ namespace Gaia.Scripts
             };
 
             //add varying rotation to astroids
-            float min = -30;
-            float max = 30;
-            rotation += MathHelper.ToRadians((float)(random.NextDouble() * (max - min) + min));
+            rotation += MathHelper.ToRadians(RandomFloat(-30, 30));
+
+            //add varying size to astroids
+            float randomSize = RandomFloat(0.03f, 0.07f);
 
             //spawn the actual astroid
-            Astroid astroid = new();
-            astroid.Initialize(ObjectTags.Enemy, spawnPoint, rotation, new(0.05f, 0.05f), "WhiteSquare");
+            Astroid astroid = new(this);
+            astroid.Initialize(ObjectTags.Enemy, spawnPoint, rotation, new(randomSize, randomSize), "WhiteSquare");
             astroid.physics.AddForce(astroid.transform.Forward() * 50, ForceType.Impulse);
-
 
             //add the astroid to the list
             astroids.Add(astroid);
         }
+
+        private float RandomFloat(float min, float max) => (float)(random.NextDouble() * (max - min) + min);
 
         // Override Dispose to clean up projectiles
         public void Dispose()
         {
             GlobalEvents.OnUpdate -= Update;
 
+            random = null;
+
             // Dispose all projectiles and clear the list
             foreach (Astroid astroid in astroids) astroid.Dispose();
             astroids.Clear();
         }
+
     }
 }

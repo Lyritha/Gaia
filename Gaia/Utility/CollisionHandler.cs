@@ -36,6 +36,9 @@ namespace Gaia.Utility
 
         private static void CheckCollision(PhysicsGameObject currentObject, PhysicsGameObject targetObject)
         {
+            //skip collision check if they are in the lists
+            if (currentObject.ignoreCollissions.Contains(targetObject.Tag) || targetObject.ignoreCollissions.Contains(currentObject.Tag)) return;
+
             // Define the current pair
             (PhysicsGameObject, PhysicsGameObject) pair = (currentObject, targetObject);
 
@@ -106,7 +109,9 @@ namespace Gaia.Utility
         private static void ApplyCollisionForces(PhysicsGameObject currentObject, PhysicsGameObject targetObject)
         {
             // If either object isn't affected by collision forces, skip the check
-            if (!currentObject.affectedByCollision || !targetObject.affectedByCollision) return;
+            if (currentObject.isTrigger || targetObject.isTrigger) return;
+            //if (currentObject.physics == null || targetObject.physics == null) return;
+
 
             // Get velocities and masses to avoid redundant property access
             Vector2 currentVelocity = currentObject.physics.Velocity;

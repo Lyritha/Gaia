@@ -9,15 +9,19 @@ namespace Gaia.Scripts.Objects
 {
     internal class Player : PhysicsGameObject
     {
-        public float speed = 15;
+        public event Action<int> OnPlayerTakeDamage;
+
+        private int health = 3;
+        public float speed = 2;
         private float timeElapsed = 0;
         private readonly List<Projectile> projectiles = new();
 
         public override void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
-            affectedByCollision = false;
+            ignoreCollissions.Add(tag);
+            ignoreCollissions.Add(ObjectTags.PlayerProjectile);
+
             base.Initialize(tag, position, rotation, scale, textureName);
-            physics.Mass = 10;
         }
 
         protected override void Update(float deltaTime)
@@ -28,6 +32,17 @@ namespace Gaia.Scripts.Objects
             Shoot(deltaTime);
 
             base.Update(deltaTime);
+
+            for (int i = projectiles.Count - 1; i >= 0; i--)
+            {
+                Projectile projectile = projectiles[i];
+
+                if (Utils.IsOutOfBounds(projectile.transform.position))
+                {
+                    projectile.Dispose();
+                    projectiles.Remove(projectile);
+                }
+            }
         }
 
         protected override void Move()
@@ -54,7 +69,7 @@ namespace Gaia.Scripts.Objects
                 projectile.physics.AddForce(projectile.transform.Forward() * 100, ForceType.Impulse);
                 projectiles.Add(projectile);
 
-                physics.AddForce(-(projectile.physics.Velocity / projectile.physics.Mass), ForceType.Impulse);
+                physics.AddForce(-(projectile.physics.Velocity * 0.1f / projectile.physics.Mass), ForceType.Impulse);
 
                 timeElapsed = 0;
             }
@@ -81,6 +96,8 @@ namespace Gaia.Scripts.Objects
             if (collisionData.tag == ObjectTags.Enemy || collisionData.tag == ObjectTags.EnemyProjectile)
             {
                 spriteColor = Color.Red;
+                health--;
+                OnPlayerTakeDamage?.Invoke(health);
             }
         }
 

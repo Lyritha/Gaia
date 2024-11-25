@@ -1,13 +1,15 @@
 ﻿using Gaia.Utility;
 using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 
 namespace Gaia.Components
 {
     internal class PhysicsGameObject : GameObject
     {
+        public List<ObjectTags> ignoreCollissions = new();
+        public bool isTrigger = false;
         public Physics2D physics;
-        public bool affectedByCollision = true;
 
         public override void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
@@ -32,7 +34,6 @@ namespace Gaia.Components
             CollisionHandler.collisionObjects.Remove(this);
 
             physics?.Dispose();
-            physics = null;
 
             base.Dispose();
         }
