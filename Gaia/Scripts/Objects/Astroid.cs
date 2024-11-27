@@ -19,12 +19,18 @@ namespace Gaia.Scripts.Objects
         public override void OnCollisionStarted(CollisionData collisionData)
         {
             base.OnCollisionStarted(collisionData);
+            if (collisionData.tag == ObjectTags.PlayerProjectile)
+                GlobalEvents.RaiseOnEarnScore(5);
+                
 
             if (collisionData.tag == ObjectTags.PlayerProjectile || collisionData.tag == ObjectTags.Player)
-            {
-                spawnAstroids.astroids.Remove(this);
-                Dispose();
-            }
+                spawnAstroids?.RemoveAstroid(this);
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+            spawnAstroids = null;
         }
     }
 }

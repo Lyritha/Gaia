@@ -13,7 +13,7 @@ namespace Gaia.Main.Scenes
         public int score = 0;
 
         //ui
-        UI_Template ui;
+        UI_Level_1 ui;
 
         //keeps track of player object in current "scene"
         private Player player;
@@ -21,7 +21,7 @@ namespace Gaia.Main.Scenes
 
         public override void LoadScene()
         {
-            ui = new UI_Template();
+            ui = new UI_Level_1();
             CreatePlayer();
             spawnAstroids = new();
 
@@ -48,6 +48,7 @@ namespace Gaia.Main.Scenes
             player?.Dispose();
             spawnAstroids?.Dispose();
 
+            ui.Dispose();
             base.Dispose();
         }
     }

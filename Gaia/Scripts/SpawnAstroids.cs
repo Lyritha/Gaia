@@ -5,6 +5,7 @@ using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Gaia.Scripts
 {
@@ -18,7 +19,7 @@ namespace Gaia.Scripts
 
         Random random;
 
-        public List<Astroid> astroids { get; private set; } = new();
+        public List<PhysicsGameObject> astroids { get; private set; } = new();
 
         public SpawnAstroids()
         {
@@ -42,7 +43,7 @@ namespace Gaia.Scripts
 
             for (int i = astroids.Count - 1; i >= 0; i--)
             {
-                Astroid astroid = astroids[i];
+                PhysicsGameObject astroid = astroids[i];
 
                 if (Utils.IsOutOfBounds(astroid.transform.position))
                 {
@@ -80,6 +81,12 @@ namespace Gaia.Scripts
 
             //add the astroid to the list
             astroids.Add(astroid);
+        }
+
+        public void RemoveAstroid(PhysicsGameObject obj)
+        {
+            astroids.Remove(obj);
+            obj.Dispose();
         }
 
         private float RandomFloat(float min, float max) => (float)(random.NextDouble() * (max - min) + min);

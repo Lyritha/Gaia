@@ -31,7 +31,7 @@ namespace Gaia.Components
         public override void Dispose()
         {
             // Remove from collision handler
-            CollisionHandler.collisionObjects.Remove(this);
+            CollisionHandler.RemoveCollisionObject(this);
 
             physics?.Dispose();
 

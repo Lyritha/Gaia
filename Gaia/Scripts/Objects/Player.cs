@@ -4,6 +4,7 @@ using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Gaia.Scripts.Objects
 {
@@ -39,8 +40,8 @@ namespace Gaia.Scripts.Objects
 
                 if (Utils.IsOutOfBounds(projectile.transform.position))
                 {
-                    projectile.Dispose();
                     projectiles.Remove(projectile);
+                    projectile.Dispose();
                 }
             }
         }
@@ -62,6 +63,7 @@ namespace Gaia.Scripts.Objects
 
             if (timeElapsed > 0.5f && InputHandler.IsMouseLeftDown)
             {
+
                 Vector2 spawnPoint = transform.position + transform.Forward() * (texture.Height * transform.scale.Y / 2);
 
                 Projectile projectile = new();
@@ -87,16 +89,19 @@ namespace Gaia.Scripts.Objects
             base.Dispose();
         }
 
-        public override void OnColliding(CollisionData collisionData)
+        public override void OnCollisionStarted(CollisionData collisionData)
         {
             //make sure to do base first, so that the collision state is set properly
-            base.OnColliding(collisionData);
+            base.OnCollisionStarted(collisionData);
 
             //if enemy or enemy projectile hits you, then "die"
             if (collisionData.tag == ObjectTags.Enemy || collisionData.tag == ObjectTags.EnemyProjectile)
             {
                 spriteColor = Color.Red;
                 health--;
+
+                if (health <= 0) SceneManager.LoadScene(Scenes.GameOver);
+
                 OnPlayerTakeDamage?.Invoke(health);
             }
         }

@@ -3,7 +3,6 @@ using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Gaia.Utility
 {
@@ -23,6 +22,31 @@ namespace Gaia.Utility
             {
                 timer = 0f;
                 CheckAllCollisions();
+            }
+        }
+
+        public static void RemoveCollisionObject(PhysicsGameObject obj)
+        {
+            collisionObjects.Remove(obj);
+
+            foreach ((PhysicsGameObject, PhysicsGameObject) existingPair in collidingPairs)
+            {
+                if (existingPair.Item1 == obj)
+                {
+                    collidingPairs.Remove(existingPair);
+
+                    if (!CheckIfInPairs(existingPair.Item2))
+                        existingPair.Item2.OnCollisionStopped();
+
+                }
+                else if (existingPair.Item2 == obj)
+                {
+                    collidingPairs.Remove(existingPair);
+
+                    if (!CheckIfInPairs(existingPair.Item1))
+                        existingPair.Item1.OnCollisionStopped();
+
+                }
             }
         }
 
@@ -68,18 +92,22 @@ namespace Gaia.Utility
                 // Handle new collision pairs (only if not already in pairs)
                 if (!collidingPairs.Contains(pair))
                 {
+                    // Add the pair to the list
+                    collidingPairs.Add(pair);
+
+                    currentObject.OnCollisionStarted(currentObjectData);
+                    targetObject.OnCollisionStarted(targetObjectData);
+
                     // Only trigger OnCollisionStarted if not already in pairs
                     if (!CheckIfInPairs(currentObject))
-                        currentObject.OnCollisionStarted(currentObjectData);
+
 
                     if (!CheckIfInPairs(targetObject))
-                        targetObject.OnCollisionStarted(targetObjectData);
+
 
                     // Apply the collision forces
                     ApplyCollisionForces(currentObject, targetObject);
 
-                    // Add the pair to the list
-                    collidingPairs.Add(pair);
                 }
                 else
                 {
@@ -110,7 +138,6 @@ namespace Gaia.Utility
         {
             // If either object isn't affected by collision forces, skip the check
             if (currentObject.isTrigger || targetObject.isTrigger) return;
-            //if (currentObject.physics == null || targetObject.physics == null) return;
 
 
             // Get velocities and masses to avoid redundant property access
