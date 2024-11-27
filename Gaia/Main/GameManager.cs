@@ -24,7 +24,7 @@ namespace Gaia
             GraphicsManager.Initialize(this, graphics);
             GlobalEvents.OnUpdate += CollisionHandler.Update;
 
-            SceneManager.LoadScene(Scenes.Level);
+            SceneManager.LoadScene(SceneManager.Scenes.MainMenu);
 
             base.Initialize();
         }

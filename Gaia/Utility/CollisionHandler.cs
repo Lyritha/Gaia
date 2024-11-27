@@ -98,13 +98,6 @@ namespace Gaia.Utility
                     currentObject.OnCollisionStarted(currentObjectData);
                     targetObject.OnCollisionStarted(targetObjectData);
 
-                    // Only trigger OnCollisionStarted if not already in pairs
-                    if (!CheckIfInPairs(currentObject))
-
-
-                    if (!CheckIfInPairs(targetObject))
-
-
                     // Apply the collision forces
                     ApplyCollisionForces(currentObject, targetObject);
 

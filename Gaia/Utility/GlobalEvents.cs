@@ -3,7 +3,7 @@ using System;
 
 namespace Gaia
 {
-    public static class GlobalEvents
+    internal static class GlobalEvents
     {
         public static event Action<float> OnUpdate;
         public static event Action<float> OnLateUpdate;

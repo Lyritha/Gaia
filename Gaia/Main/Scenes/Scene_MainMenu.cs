@@ -1,17 +1,12 @@
-﻿using Gaia.Utility.CustomVariables;
-using Gaia.Utility;
-using Gaia.Scripts;
-using Microsoft.Xna.Framework;
-using Gaia.Scripts.Objects;
-using System;
+﻿
 using Gaia.Main.UI;
 
 namespace Gaia.Main.Scenes
 {
-    internal class Scene_GameOver : Scene_Template
+    internal class Scene_MainMenu : Scene_Template
     {
         //ui
-        UI_GameOver ui;
+        UI_MainMenu ui;
         
 
         //keeps track of player object in current "scene"
@@ -19,7 +14,7 @@ namespace Gaia.Main.Scenes
         public override void LoadScene()
         {
 
-            ui = new UI_GameOver();
+            ui = new UI_MainMenu();
         }
 
         public override void Dispose()

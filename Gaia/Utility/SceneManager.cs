@@ -4,18 +4,20 @@ using System.Collections.Generic;
 
 namespace Gaia.Utility
 {
-    public enum Scenes
+    internal static class SceneManager
     {
-        Level,
-        GameOver
-    }
+        public enum Scenes
+        {
+            Level,
+            GameOver,
+            MainMenu
+        }
 
-    public static class SceneManager
-    {
-        private static List<Type> sceneTypes = new()
+        private static readonly List<Type> sceneTypes = new()
         {
             typeof(Scene_Level_1),
-            typeof(Scene_GameOver)
+            typeof(Scene_GameOver),
+            typeof(Scene_MainMenu)
         };
 
         private static Scene_Template currentScene;

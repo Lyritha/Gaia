@@ -44,6 +44,7 @@ namespace Gaia.Main.UI
             this.pivotPoint = pivotPoint;
 
             GlobalEvents.OnDraw += DrawSelf;
+            GlobalEvents.OnUpdate += Update;
         }
         
         //drawing
@@ -65,6 +66,10 @@ namespace Gaia.Main.UI
                 SpriteEffects.None,
                 0
             );
+        }
+
+        public virtual void Update(float deltaTime)
+        {
         }
 
         private Vector2 CalculatePivot(Vector2 textSize)
@@ -117,6 +122,7 @@ namespace Gaia.Main.UI
         public virtual void Dispose()
         {
             GlobalEvents.OnDraw -= DrawSelf;
+            GlobalEvents.OnUpdate -= Update;
             arialFont = null;  // Set to null so the reference is cleared
         }
     }

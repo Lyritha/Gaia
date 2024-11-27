@@ -100,7 +100,7 @@ namespace Gaia.Scripts.Objects
                 spriteColor = Color.Red;
                 health--;
 
-                if (health <= 0) SceneManager.LoadScene(Scenes.GameOver);
+                if (health <= 0) SceneManager.LoadScene(SceneManager.Scenes.GameOver);
 
                 OnPlayerTakeDamage?.Invoke(health);
             }

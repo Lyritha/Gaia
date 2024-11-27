@@ -1,9 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Gaia.Utility
 {
-    public static class InputHandler
+    internal static class InputHandler
     {
         // Static fields to store input state
         public static Vector2 Wasd { get; private set; } = Vector2.Zero;

@@ -16,6 +16,7 @@ namespace Gaia.Main.UI
             GlobalEvents.OnEarnScore += UpdateScore;
 
             Score = new UI_Element();
+            GlobalVariables.score = score;
             Score.Initialize($"Score: {score}", 1, new(0, 0), PivotPoint.TopLeft);
 
             Health = new UI_Element();
@@ -26,6 +27,7 @@ namespace Gaia.Main.UI
         public void UpdateScore(int amount)
         {
             score += amount;
+            GlobalVariables.score = score;
             Score.Content = $"Score: {score}";
         }
 

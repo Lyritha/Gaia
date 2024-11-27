@@ -5,7 +5,7 @@ using System;
 
 namespace Gaia
 {
-    public static class GraphicsManager
+    internal static class GraphicsManager
     {
         //keeps track of the values to scale sprites properly so that they take the same amount of space on the screen no matter the resolution
         private static readonly Vector2 virtualResolution = new(1920, 1080);
