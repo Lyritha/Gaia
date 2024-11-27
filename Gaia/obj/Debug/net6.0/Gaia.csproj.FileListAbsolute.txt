@@ -52,5 +52,4 @@ C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\ref\Gaia.dll
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\WhiteSquare.xnb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\arrow.xnb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Arial_32.xnb
-C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.sourcelink.json
-C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.csproj.Up2Date
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.csproj.CopyComplete

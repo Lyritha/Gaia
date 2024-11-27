@@ -1,5 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/afbeelding.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/Player.xnb","TextureProcessor","Texture2DContent",2954,1349845,0.1121601
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Arial_32.spritefont","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/Arial_32.xnb","FontDescriptionProcessor","SpriteFontContent",2068,267295,0.0943329
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/arrow.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/arrow.xnb","TextureProcessor","Texture2DContent",15788,8294485,0.161934
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/WhiteSquare.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/WhiteSquare.xnb","TextureProcessor","Texture2DContent",5445,4665685,0.0690911
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/afbeelding.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/Player.xnb","TextureProcessor","Texture2DContent",2954,1349845,0.1339239
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Arial_32.spritefont","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/Arial_32.xnb","FontDescriptionProcessor","SpriteFontContent",2068,267295,0.1003944
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/arrow.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/arrow.xnb","TextureProcessor","Texture2DContent",15788,8294485,0.1483176
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/WhiteSquare.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/WhiteSquare.xnb","TextureProcessor","Texture2DContent",5445,4665685,0.0735553

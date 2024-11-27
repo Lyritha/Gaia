@@ -5,8 +5,10 @@
     "\\Gaia\\Components",
     "\\Gaia\\Content",
     "\\Gaia\\Main",
+    "\\Gaia\\Scripts",
+    "\\Gaia\\Scripts\\Objects",
     "\\Gaia\\Utility"
   ],
-  "SelectedNode": "\\Gaia\\Components\\Transform.cs",
+  "SelectedNode": "\\Gaia\\Scripts\\Objects\\Astroid.cs",
   "PreviewInSolutionExplorer": false
 }
