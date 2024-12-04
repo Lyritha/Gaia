@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/arrow.png</SourceFile>
-  <SourceTime>2024-11-12T17:09:01.0711424+01:00</SourceTime>
+  <SourceTime>2024-11-13T02:59:03.005297+01:00</SourceTime>
   <DestFile>C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Content/arrow.xnb</DestFile>
-  <DestTime>2024-11-25T22:19:36.8225909+01:00</DestTime>
+  <DestTime>2024-12-04T10:07:22.5485092+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\scripts\\spawnastroids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\scripts\\spawnastroids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\scripts\\objects\\astroid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\scripts\\objects\\astroid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\main\\ui\\ui_template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\main\\ui\\ui_template.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\scripts\\spawnastroids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|solutionrelative:gaia\\scripts\\spawnastroids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A7936C3-7FB9-4038-A4F1-AC74AAF07875}|Gaia\\Gaia.csproj|c:\\users\\colli\\documents\\github\\gaia\\gaia\\main\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -106,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GlobalEvents.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Utility\\GlobalEvents.cs",
               "RelativeDocumentMoniker": "Gaia\\Utility\\GlobalEvents.cs",
@@ -126,8 +126,7 @@
               "RelativeToolTip": "Gaia\\Utility\\GlobalEvents.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T11:22:00.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T11:22:00.78Z"
             },
             {
               "$type": "Document",
@@ -139,12 +138,11 @@
               "RelativeToolTip": "Gaia\\Components\\GameObject.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAowAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T09:04:19.276Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T09:04:19.276Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Scripts\\Objects\\Player.cs",
               "RelativeDocumentMoniker": "Gaia\\Scripts\\Objects\\Player.cs",
@@ -152,12 +150,11 @@
               "RelativeToolTip": "Gaia\\Scripts\\Objects\\Player.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAowGIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T09:36:54.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T09:36:54.325Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "SpawnAstroids.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Scripts\\SpawnAstroids.cs",
               "RelativeDocumentMoniker": "Gaia\\Scripts\\SpawnAstroids.cs",
@@ -170,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Projectile.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Scripts\\Objects\\Projectile.cs",
               "RelativeDocumentMoniker": "Gaia\\Scripts\\Objects\\Projectile.cs",
@@ -178,8 +175,7 @@
               "RelativeToolTip": "Gaia\\Scripts\\Objects\\Projectile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T08:03:58.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T08:03:58.313Z"
             },
             {
               "$type": "Document",
@@ -191,12 +187,11 @@
               "RelativeToolTip": "Gaia\\Main\\Scenes\\Scene_Template.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T02:40:24.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T02:40:24.588Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Scene_Level_1.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Main\\Scenes\\Scene_Level_1.cs",
               "RelativeDocumentMoniker": "Gaia\\Main\\Scenes\\Scene_Level_1.cs",
@@ -204,25 +199,24 @@
               "RelativeToolTip": "Gaia\\Main\\Scenes\\Scene_Level_1.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T12:28:02.659Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T12:28:02.659Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Astroid.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Scripts\\Objects\\Astroid.cs",
               "RelativeDocumentMoniker": "Gaia\\Scripts\\Objects\\Astroid.cs",
               "ToolTip": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Scripts\\Objects\\Astroid.cs",
               "RelativeToolTip": "Gaia\\Scripts\\Objects\\Astroid.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBYAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T09:31:51.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CollisionHandler.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Utility\\CollisionHandler.cs",
               "RelativeDocumentMoniker": "Gaia\\Utility\\CollisionHandler.cs",
@@ -230,8 +224,7 @@
               "RelativeToolTip": "Gaia\\Utility\\CollisionHandler.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAmwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T11:32:53.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T11:32:53.098Z"
             },
             {
               "$type": "Document",
@@ -243,12 +236,11 @@
               "RelativeToolTip": "Gaia\\Components\\Physics2D.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAkwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T03:08:49.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T03:08:49.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UI_Template.cs",
               "DocumentMoniker": "C:\\Users\\colli\\Documents\\GitHub\\Gaia\\Gaia\\Main\\UI\\UI_Template.cs",
               "RelativeDocumentMoniker": "Gaia\\Main\\UI\\UI_Template.cs",
@@ -256,8 +248,7 @@
               "RelativeToolTip": "Gaia\\Main\\UI\\UI_Template.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T11:24:43.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T11:24:43.575Z"
             },
             {
               "$type": "Document",
@@ -281,8 +272,7 @@
               "RelativeToolTip": "Gaia\\Main\\GameManager.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T01:59:40.686Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T01:59:40.686Z"
             },
             {
               "$type": "Document",
