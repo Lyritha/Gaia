@@ -41,7 +41,7 @@ namespace Gaia
             GraphicsDeviceManager.PreferredBackBufferWidth = screenWidth;
             GraphicsDeviceManager.PreferredBackBufferHeight = screenHeight;
 
-            GraphicsDeviceManager.IsFullScreen = true;
+            GraphicsDeviceManager.IsFullScreen = false;
 
             GraphicsDeviceManager.ApplyChanges();
         }
@@ -52,7 +52,7 @@ namespace Gaia
             SpriteBatch.Begin(
                 SpriteSortMode.BackToFront,
                 BlendState.AlphaBlend,
-                SamplerState.LinearClamp,
+                SamplerState.PointClamp,
                 DepthStencilState.None,
                 RasterizerState.CullNone
                 );

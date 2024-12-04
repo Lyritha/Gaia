@@ -32,13 +32,13 @@ namespace Gaia.Main.Scenes
         {
             //get start position and scale, account for different screen resolutions
             Vector2 startPos = Utils.UVToScreenPosition(new(0.5f, 0.5f));
-            Vector2 startScale = new(0.1f, 0.1f);
+            Vector2 startScale = new(5f, 5f);
 
             //create the player
             player = new();
 
             //set the default values, pass the inputHandler to the player
-            player.Initialize(ObjectTags.Player, startPos, 0, startScale, "arrow");
+            player.Initialize(ObjectTags.Player, startPos, 0, startScale, "SpaceShip");
         }
 
         public override void Dispose()

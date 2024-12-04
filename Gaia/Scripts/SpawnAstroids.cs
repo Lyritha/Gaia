@@ -72,12 +72,14 @@ namespace Gaia.Scripts
             rotation += MathHelper.ToRadians(RandomFloat(-30, 30));
 
             //add varying size to astroids
-            float randomSize = RandomFloat(0.03f, 0.07f);
+            float randomSize = RandomFloat(2f, 5f);
+            float randomSpeed = RandomFloat(30,60);
+
 
             //spawn the actual astroid
             Astroid astroid = new(this);
-            astroid.Initialize(ObjectTags.Enemy, spawnPoint, rotation, new(randomSize, randomSize), "WhiteSquare");
-            astroid.physics.AddForce(astroid.transform.Forward() * 50, ForceType.Impulse);
+            astroid.Initialize(ObjectTags.Enemy, spawnPoint, rotation, new(randomSize, randomSize), "Astroid");
+            astroid.physics.AddForce(astroid.transform.Forward() * randomSpeed, ForceType.Impulse);
 
             //add the astroid to the list
             astroids.Add(astroid);

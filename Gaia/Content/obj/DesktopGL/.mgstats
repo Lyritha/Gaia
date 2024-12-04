@@ -1,5 +1,10 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/afbeelding.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Player.xnb","TextureProcessor","Texture2DContent",2954,1349845,0.1065394
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Arial_32.spritefont","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Arial_32.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.1399061
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/arrow.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/arrow.xnb","TextureProcessor","Texture2DContent",15788,8294485,0.2329773
-"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/WhiteSquare.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/WhiteSquare.xnb","TextureProcessor","Texture2DContent",5445,4665685,0.0955128
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Arial_32.spritefont","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Arial_32.xnb","FontDescriptionProcessor","SpriteFontContent",2068,267295,0.0794246
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Astroid_1.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Astroid_1.xnb","TextureProcessor","Texture2DContent",371,4181,0.0819726
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Astroid_2.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Astroid_2.xnb","TextureProcessor","Texture2DContent",371,4181,0.0021973
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Astroid_3.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Astroid_3.xnb","TextureProcessor","Texture2DContent",358,4181,0.0022503
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Projectile_1.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Projectile_1.xnb","TextureProcessor","Texture2DContent",147,373,0.0844456
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Projectile_2.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Projectile_2.xnb","TextureProcessor","Texture2DContent",149,373,0.0011886
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/Projectile_3.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/Projectile_3.xnb","TextureProcessor","Texture2DContent",160,373,0.0010509
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/SpaceShip_On.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/SpaceShip_On.xnb","TextureProcessor","Texture2DContent",450,4181,0.0013368
+"C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/WhiteSquare.png","C:/Users/colli/Documents/GitHub/Gaia/Gaia/Content/bin/DesktopGL/WhiteSquare.xnb","TextureProcessor","Texture2DContent",5445,4665685,0.1696521

@@ -12,21 +12,21 @@ namespace Gaia.Components
 
         public Transform transform;
 
-        public Texture2D texture;
+        public Texture2D renderedTexture;
         public Color spriteColor = Color.White;
 
         public bool isColliding = false;
-        public float colliderRadius { get; private set; } = 0;
+        public float colliderRadius { get; protected set; } = 0;
 
         public virtual void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
             //set default values
             Tag = tag;
-            texture = GraphicsManager.Content.Load<Texture2D>(textureName);
+            renderedTexture = GraphicsManager.Content.Load<Texture2D>(textureName);
             transform = new(position, rotation, scale * GraphicsManager.ResolutionScaling);
 
             //calculate the collider radius
-            float medianDimension = (texture.Width + texture.Height) / 2f;
+            float medianDimension = (renderedTexture.Width + renderedTexture.Height) / 2f;
             float uniformScale = (transform.scale.X + transform.scale.Y) / 2f;
             colliderRadius = (medianDimension * uniformScale) / 2f;
 
@@ -46,11 +46,11 @@ namespace Gaia.Components
         private void DrawSelf(SpriteBatch pSpriteBatch)
         {
             //get pivot point of object
-            Vector2 pivotPoint = new(texture.Width / 2, texture.Height / 2);
+            Vector2 pivotPoint = new(renderedTexture.Width / 2, renderedTexture.Height / 2);
 
             //draw the sprite
             pSpriteBatch.Draw(
-                texture, 
+                renderedTexture, 
                 transform.position, 
                 null, 
                 spriteColor, 
@@ -70,7 +70,7 @@ namespace Gaia.Components
             GlobalEvents.OnDraw -= DrawSelf;
 
             // Do NOT dispose of the texture here; let ContentManager handle it
-            texture = null;  // Set to null so the reference is cleared
+            renderedTexture = null;  // Set to null so the reference is cleared
         }
 
         public virtual void OnCollisionStarted(CollisionData collisionData)

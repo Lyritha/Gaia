@@ -33,6 +33,7 @@ namespace Gaia.Components
         /// </summary>
         /// <returns>direction of local forward vector</returns>
         public Vector2 Forward() => new((float)Math.Sin(rotation), -(float)Math.Cos(rotation));
+        public Vector2 Right() => new((float)Math.Cos(rotation), (float)Math.Sin(rotation));
 
         public void LookAt(Vector2 lookAtTarget)
         {

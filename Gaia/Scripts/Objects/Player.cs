@@ -2,23 +2,30 @@
 using Gaia.Utility;
 using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace Gaia.Scripts.Objects
 {
     internal class Player : PhysicsGameObject
     {
+        private Texture2D ship_Idle;
+        private Texture2D ship_On;
+
         public event Action<int> OnPlayerTakeDamage;
 
         private int health = 3;
         public float speed = 2;
         private float timeElapsed = 0;
         private readonly List<Projectile> projectiles = new();
+        private Random random = new();
 
         public override void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
+            ship_Idle = GraphicsManager.Content.Load<Texture2D>(textureName);
+            ship_On = GraphicsManager.Content.Load<Texture2D>(textureName+"_On");
+
             ignoreCollissions.Add(tag);
             ignoreCollissions.Add(ObjectTags.PlayerProjectile);
 
@@ -48,6 +55,8 @@ namespace Gaia.Scripts.Objects
 
         protected override void Move()
         {
+            renderedTexture = (InputHandler.Wasd.Y > 0) ? ship_On : ship_Idle;
+
             physics.AddForce(transform.Forward() * InputHandler.Wasd.Y * speed);
             base.Move();
         }
@@ -63,14 +72,24 @@ namespace Gaia.Scripts.Objects
 
             if (timeElapsed > 0.5f && InputHandler.IsMouseLeftDown)
             {
-
-                Vector2 spawnPoint = transform.position + transform.Forward() * (texture.Height * transform.scale.Y / 2);
+                //spawn first projectile
+                Vector2 spawnPoint = transform.position + (transform.Right() * -50f) + (transform.Forward() * (renderedTexture.Height * transform.scale.Y / 2));
 
                 Projectile projectile = new();
-                projectile.Initialize(ObjectTags.PlayerProjectile, spawnPoint, transform.rotation, new(0.05f, 0.05f), "WhiteSquare");
-                projectile.physics.AddForce(projectile.transform.Forward() * 100, ForceType.Impulse);
+                projectile.Initialize(ObjectTags.PlayerProjectile, spawnPoint, transform.rotation, new(4f, 4f), "Projectile");
+                projectile.physics.AddForce(projectile.transform.Forward() * random.Next(90,100), ForceType.Impulse);
                 projectiles.Add(projectile);
 
+                //spawn second projectile
+                spawnPoint = transform.position + (transform.Right() * 50f) + (transform.Forward() * (renderedTexture.Height * transform.scale.Y / 2));
+
+                projectile = new();
+                projectile.Initialize(ObjectTags.PlayerProjectile, spawnPoint, transform.rotation, new(4f, 4f), "Projectile");
+                projectile.physics.AddForce(projectile.transform.Forward() * random.Next(90, 100), ForceType.Impulse);
+                projectiles.Add(projectile);
+
+
+                //add force for both projectiles
                 physics.AddForce(-(projectile.physics.Velocity * 0.1f / projectile.physics.Mass), ForceType.Impulse);
 
                 timeElapsed = 0;
@@ -83,6 +102,9 @@ namespace Gaia.Scripts.Objects
             foreach (var projectile in projectiles)
                 projectile.Dispose();
 
+            random = null;
+            ship_Idle = null;
+            ship_On = null;
             projectiles.Clear();
 
             // Call the base class Dispose

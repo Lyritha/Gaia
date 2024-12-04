@@ -52,7 +52,7 @@ namespace Gaia
         /// <param name="gameTime"></param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             GraphicsManager.CreateSpriteBatch();
             base.Draw(gameTime);

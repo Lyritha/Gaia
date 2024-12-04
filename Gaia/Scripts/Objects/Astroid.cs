@@ -1,6 +1,8 @@
 ﻿using Gaia.Components;
 using Gaia.Utility.CustomVariables;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace Gaia.Scripts.Objects
 {
@@ -8,11 +10,15 @@ namespace Gaia.Scripts.Objects
     {
         SpawnAstroids spawnAstroids;
 
+        private Random random = new();
+
         public Astroid(SpawnAstroids parentObject) => spawnAstroids = parentObject;
 
         public override void Initialize(ObjectTags tag, Vector2 position, float rotation, Vector2 scale, string textureName)
         {
-            base.Initialize(tag, position, rotation, scale, textureName);
+            string name = $"{textureName}_{random.Next(1,4)}";
+
+            base.Initialize(tag, position, rotation, scale, name);
             spriteColor = Color.Gray;
         }
 

@@ -24,7 +24,6 @@ C:\Users\colli\source\repos\Gaia\Gaia\obj\Debug\net6.0\Gaia.pdb
 C:\Users\colli\source\repos\Gaia\Gaia\obj\Debug\net6.0\Gaia.genruntimeconfig.cache
 C:\Users\colli\source\repos\Gaia\Gaia\obj\Debug\net6.0\ref\Gaia.dll
 C:\Users\colli\source\repos\Gaia\Gaia\bin\Debug\net6.0\Content\Player.xnb
-C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Player.xnb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Gaia.exe
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Gaia.deps.json
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Gaia.runtimeconfig.json
@@ -50,7 +49,14 @@ C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.pdb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.genruntimeconfig.cache
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\ref\Gaia.dll
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\WhiteSquare.xnb
-C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\arrow.xnb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Arial_32.xnb
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.sourcelink.json
 C:\Users\colli\Documents\GitHub\Gaia\Gaia\obj\Debug\net6.0\Gaia.csproj.Up2Date
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\SpaceShip.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\SpaceShip_On.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Projectile_1.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Projectile_2.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Projectile_3.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Astroid_1.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Astroid_2.xnb
+C:\Users\colli\Documents\GitHub\Gaia\Gaia\bin\Debug\net6.0\Content\Astroid_3.xnb
